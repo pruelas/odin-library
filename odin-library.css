@@ -15,13 +15,34 @@ body{
     background-color: rgb(255, 155, 118);
     flex-grow: 1;
     display: flex;
+    flex-direction: row;
     /* justify-items: center; */
     align-items: center;
+    border: olive solid 1px;
+    justify-content: space-between;
 }
 
 .header h1{
     font-size: 2em;
     padding-left: 1em;
+    font-weight: bolder;
+}
+
+.addBook{
+    border: none;
+    background-color: rgb(38, 102, 43);
+    font-size: 1.3em;
+    border-radius: 5px;
+    margin-right: 1em;
+    padding: .5em 1em;
+    box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, 0.267);
+    color:rgb(255, 246, 235);
+    font-weight:bolder;
+
+}
+
+.addBook:hover{
+    background-color: rgb(82, 158, 88);
 }
 
 #libraryDisplay{
@@ -29,13 +50,14 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    border-top: rgba(189, 189, 189, 0.267) solid 5px;
+    /* border-top: rgba(189, 189, 189, 0.267) solid 5px; */
 }
 
 #libraryDisplay .book{
     /* height: ;
     width: ; */
     /* s */
+    position: relative;
     width: 10em;
     height: 15em;
     background-color: rgb(182, 166, 127);
@@ -51,6 +73,40 @@ body{
     /* border: black solid 5px; */
   /*  color: rgb(146, 133, 102);*/
 } 
+
+.bookRemove{
+    display:none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    color: red;
+    font-weight: bolder;
+/*     vertical-align: top;
+    justify-self:right;
+    align-self:end; */
+/*     vertical-align: top; */
+    border: none;
+    border-radius: 50%;
+    height: 2.7em;
+    width: 2.7em;
+    top: 0%;
+    align-self: end;
+}
+
+#libraryDisplay .book:hover{
+    /* display: block; */
+/*     width: 10.5em;
+    height: 15.5em;
+    font-size: 1em; */
+}
+
+#libraryDisplay .book:hover > .bookRemove{
+    display: block;
+    box-shadow: 3px 3px 1px 1px rgba(126, 126, 126, 0.671);
+}
+
+.bookRemove:hover{
+    background-color: rgb(218, 218, 218);
+}
 
 .book div{
     margin: 1em;

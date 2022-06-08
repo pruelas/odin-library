@@ -111,3 +111,56 @@ body{
 .book div{
     margin: 1em;
 }
+
+.newBookForm{
+    position: absolute;
+/*     width: 30em;
+    height: 40em; */
+    border: rgb(221, 0, 0) solid 1px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    top: 15vh;
+    background-color: white;
+}
+
+.addBookForm{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    border: yellow solid 1px;
+    padding: 3em;
+    width: 30vw;
+    height: 40vh;
+
+}
+
+.addBookForm h1{
+    align-self: center;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+label, p{
+    font-size: 1.2em;
+    margin-bottom: .2em;
+}
+
+input[type = text]{
+    margin: 0em 0em 2em 0em;
+}
+
+.hasRead{
+    margin-bottom: 3em;
+}
+.addBookForm button{
+    /* justify-content: left; */
+    align-self: center;
+    width: 20vw;
+    /* padding-right: 0%; */
+    margin-right: 0%;
+    box-shadow: 0px 3px 1px 1px rgba(0, 0, 0, 0.356);
+
+    /* justify-content: end; */
+}

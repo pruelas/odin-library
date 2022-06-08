@@ -20,8 +20,10 @@ function removeBook(book){
     addBookToLibrary();
 }
 
-function addBook(){
+function addBookForm(){
     console.log("addBook");
+    var newBookForm = document.getElementById("newBookForm");
+    newBookForm.style.visibility = "visible";
 }
 
 let book1 = new Book(1, 1, 1, 1);
@@ -33,6 +35,7 @@ let myLibrary = [book1, book2, book3];
 function addBookToLibrary(){
     console.log("ran");
     var libraryDisplay = document.getElementById("libraryDisplay");
+    libraryDisplay.innerHTML = "";
     var bookDiv;
     var bookTitle;
     var bookAuthor;
@@ -64,7 +67,7 @@ function addBookToLibrary(){
             console.log(bookRemove.getAttribute('data-index'));
             bookRemove.onclick = function() { removeBook(this); };
 
-            bookDiv.append(bookRemove, bookTitle, bookAuthor, bookPages, bookRead,);
+            bookDiv.append(bookRemove, bookTitle, bookAuthor, bookPages, bookRead);
 
             libraryDisplay.appendChild(bookDiv);
         };
@@ -72,5 +75,23 @@ function addBookToLibrary(){
 
 }
 
-console.log("we running?");
+console.log("we running?" + myLibrary.length);
 addBookToLibrary();
+
+document.body.addEventListener('click', function(e){
+    var addBookForm = document.getElementById("newBookForm");
+    console.log(addBookForm.style.visibility + "eventListener" + e.target.className + e.target);
+    if( (e.target.className !=="addBookForm" && e.target.className !=="hasRead" && e.target.className !=="addBook" && e.target instanceof HTMLDivElement) && addBookForm.style.visibility !=="hidden"){
+        addBookForm.style.visibility = 'hidden';
+    }
+})
+
+const addBook = document.getElementById("addBookForm");
+addBook.addEventListener('submit', function(e){
+    console.log(addBook.elements['title'].value, addBook.elements['read'].value, addBook.elements[3].value);
+    document.getElementById("newBookForm").style.visibility = "hidden";
+    myLibrary.push(new Book(addBook.elements['title'].value, addBook.elements['author'].value, addBook.elements['pages'].value, addBook.elements['read'].value));
+    addBookToLibrary();
+    e.preventDefault();
+    e.target.reset();
+})

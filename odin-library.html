@@ -12,12 +12,41 @@
     <div class="header">
         <h1>Library</h1>
 
-        <button class = "addBook" onclick="addBook()"> Add Book +</button>
+        <button class = "addBook" onclick="addBookForm()"> Add Book +</button>
 
     </div>
 
     <div id = "libraryDisplay">
 
+    </div>
+
+    <div class ="newBookForm" id="newBookForm" style="visibility:hidden">
+        <form class="addBookForm" action="" id="addBookForm">
+
+            <h1>Add New Book</h1>
+             
+            <label for="title">Book's Title:</label>
+            <input type="text" id="title" name = "title" required>
+
+            <label for="author">Book's Author:</label>
+            <input type="text"  id ="author" name = "author" required>
+
+            <label for="pages">Book's Pages:</label>
+            <input type="text" id="pages" name = "pages" required>
+
+            <div class="hasRead">
+                <p>Has Read?</p>
+                <input type="radio" id="read" name = "read" value = "true">
+                <label for="read">Yes</label>
+
+                <input type="radio" id="read" name = "read" value = "false" checked>
+                <label for="read">No</label>
+            </div>
+
+            <button class="addBook" type="submit"
+            >Add Book</button>
+
+        </form>
     </div>
 
 </body>
